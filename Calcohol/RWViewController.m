@@ -39,7 +39,6 @@
 }
 - (IBAction)SliderValueDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
-    [self.beerPercentTextField setText:@"Hiii"];
     [self.beerPercentTextField resignFirstResponder];
 }
 - (IBAction)buttonPressed:(UIButton *)sender {
@@ -93,6 +92,6 @@
     }
 
     
-} //Not sure i understand where this came from
+}
 
 @end
