@@ -18,7 +18,7 @@
 // DELETE PRE-WRITTEN METHODS: initiWithNibName:bundle:, viewDidLoad, didReceiveMemoryWarning…
 
 - (void)buttonPressed:(UIButton *)sender;
-[self.beerPercentTextField resignFirstResponder];
+[self.beerPercentTextField resignFirstResponder]; // why is there an error?
 
 int numberOfBeers = self.beerCountSlider.value;
 int ouncesInOneBeerGlass = 12;  //assume they are 12oz beer bottles
