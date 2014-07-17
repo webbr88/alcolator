@@ -13,7 +13,6 @@
 		00A823091972E523003D5946 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A823071972E523003D5946 /* InfoPlist.strings */; };
 		00A8230B1972E523003D5946 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A8230A1972E523003D5946 /* main.m */; };
 		00A8230F1972E523003D5946 /* RWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A8230E1972E523003D5946 /* RWAppDelegate.m */; };
-		00A823121972E523003D5946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00A823101972E523003D5946 /* Main.storyboard */; };
 		00A823151972E523003D5946 /* RWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A823141972E523003D5946 /* RWViewController.m */; };
 		00A823171972E523003D5946 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00A823161972E523003D5946 /* Images.xcassets */; };
 		00A8231E1972E523003D5946 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A8231D1972E523003D5946 /* XCTest.framework */; };
@@ -21,6 +20,7 @@
 		00A823201972E523003D5946 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A823021972E523003D5946 /* UIKit.framework */; };
 		00A823281972E523003D5946 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00A823261972E523003D5946 /* InfoPlist.strings */; };
 		00A8232A1972E523003D5946 /* CalcoholTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A823291972E523003D5946 /* CalcoholTests.m */; };
+		00A8233519775500003D5946 /* RWWhiskeyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00A8233419775500003D5946 /* RWWhiskeyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +44,6 @@
 		00A8230C1972E523003D5946 /* Calcohol-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Calcohol-Prefix.pch"; sourceTree = "<group>"; };
 		00A8230D1972E523003D5946 /* RWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWAppDelegate.h; sourceTree = "<group>"; };
 		00A8230E1972E523003D5946 /* RWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWAppDelegate.m; sourceTree = "<group>"; };
-		00A823111972E523003D5946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00A823131972E523003D5946 /* RWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWViewController.h; sourceTree = "<group>"; };
 		00A823141972E523003D5946 /* RWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RWViewController.m; sourceTree = "<group>"; };
 		00A823161972E523003D5946 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -53,6 +52,8 @@
 		00A823251972E523003D5946 /* CalcoholTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CalcoholTests-Info.plist"; sourceTree = "<group>"; };
 		00A823271972E523003D5946 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		00A823291972E523003D5946 /* CalcoholTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcoholTests.m; sourceTree = "<group>"; };
+		00A8233319775500003D5946 /* RWWhiskeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWWhiskeyViewController.h; sourceTree = "<group>"; };
+		00A8233419775500003D5946 /* RWWhiskeyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWWhiskeyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +115,10 @@
 			children = (
 				00A8230D1972E523003D5946 /* RWAppDelegate.h */,
 				00A8230E1972E523003D5946 /* RWAppDelegate.m */,
-				00A823101972E523003D5946 /* Main.storyboard */,
 				00A823131972E523003D5946 /* RWViewController.h */,
 				00A823141972E523003D5946 /* RWViewController.m */,
+				00A8233319775500003D5946 /* RWWhiskeyViewController.h */,
+				00A8233419775500003D5946 /* RWWhiskeyViewController.m */,
 				00A823161972E523003D5946 /* Images.xcassets */,
 				00A823051972E523003D5946 /* Supporting Files */,
 			);
@@ -231,7 +233,6 @@
 			files = (
 				00A823171972E523003D5946 /* Images.xcassets in Resources */,
 				00A823091972E523003D5946 /* InfoPlist.strings in Resources */,
-				00A823121972E523003D5946 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +251,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00A8233519775500003D5946 /* RWWhiskeyViewController.m in Sources */,
 				00A8230B1972E523003D5946 /* main.m in Sources */,
 				00A823151972E523003D5946 /* RWViewController.m in Sources */,
 				00A8230F1972E523003D5946 /* RWAppDelegate.m in Sources */,
@@ -281,14 +283,6 @@
 				00A823081972E523003D5946 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		00A823101972E523003D5946 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				00A823111972E523003D5946 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		00A823261972E523003D5946 /* InfoPlist.strings */ = {
@@ -380,7 +374,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Calcohol/Calcohol-Prefix.pch";
 				INFOPLIST_FILE = "Calcohol/Calcohol-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -393,7 +389,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Calcohol/Calcohol-Prefix.pch";
 				INFOPLIST_FILE = "Calcohol/Calcohol-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -10,8 +10,11 @@
 
 @interface RWViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextField *beerPercentTextField;
-@property (strong, nonatomic) IBOutlet UISlider *beerCountSlider;
-@property (strong, nonatomic) IBOutlet UILabel *resultsLabel;
+@property (weak, nonatomic) UITextField *beerPercentTextField;
+@property (weak, nonatomic) UISlider *beerCountSlider;
+@property (weak, nonatomic) UILabel *resultsLabel;
+
+- (void)buttonPressed:(UIButton *)sender;
+
 
 @end

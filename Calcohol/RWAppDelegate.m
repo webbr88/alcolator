@@ -7,12 +7,17 @@
 //
 
 #import "RWAppDelegate.h"
+#import "RWViewController.h"
 
 @implementation RWAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     // Override point for customization after application launch.
+    RWViewController *viewController = [[RWViewController alloc] init];
+    self.window.rootViewController = viewController;
+    [self.window makeKeyAndVisible];
     return YES;
 }
 							
