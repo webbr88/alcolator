@@ -14,10 +14,9 @@
 
 @implementation RWWhiskeyViewController
 
-
 // DELETE PRE-WRITTEN METHODS: initiWithNibName:bundle:, viewDidLoad, didReceiveMemoryWarning…
 
-- (void)buttonPressed:(UIButton *)sender;
+- (void)buttonPressed:(UIButton *)sender;{
 [self.beerPercentTextField resignFirstResponder]; // why is there an error?
 
 int numberOfBeers = self.beerCountSlider.value;
@@ -50,7 +49,8 @@ if (numberOfWhiskeyGlassesForEquivalentAlcoholAmount == 1) {
 }
 
 NSString *resultText = [NSString stringWithFormat:NSLocalizedString(@"%d %@ contains as much alcohol as %.1f %@ of whiskey.", nil), numberOfBeers, beerText, numberOfWhiskeyGlassesForEquivalentAlcoholAmount, whiskeyText];
-self.resultLabel.text = resultText;
+    self.resultsLabel.text = resultText;
+  
 }
 
 @end
