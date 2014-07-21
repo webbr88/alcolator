@@ -8,6 +8,7 @@
 
 #import "RWAppDelegate.h"
 #import "RWViewController.h"
+#import "RWMainMenuViewController.h"
 
 @implementation RWAppDelegate
 
@@ -15,8 +16,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     // Override point for customization after application launch.
-    RWViewController *viewController = [[RWViewController alloc] init];
-    self.window.rootViewController = viewController;
+    
+    RWMainMenuViewController *mainMenuViewController = [[RWMainMenuViewController alloc] init];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
     return YES;
 }

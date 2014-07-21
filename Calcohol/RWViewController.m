@@ -16,6 +16,7 @@
 //@property (weak, nonatomic) UISlider *beerCountSlider;
 //@property (weak, nonatomic) UILabel *resultsLabel;
 //Why not the ones below?
+@property (weak, nonatomic) UILabel *beerCountLabel;
 @property (weak, nonatomic) UIButton *calculateButton;
 @property (weak, nonatomic) UITapGestureRecognizer  *hideKeyboardTapGestureRecognizer;
 
@@ -26,6 +27,9 @@
 
 - (void)viewDidLoad
 {
+    // Sets navigation title
+    self.title = [NSString stringWithFormat:@"%@ (%i)", NSLocalizedString(@"Wine", @"glasses of wine"), (int)self.beerCountSlider.value];
+    
     // Calls the superclass's implementation
     [super viewDidLoad];
 
@@ -51,6 +55,9 @@
     self.beerCountSlider.minimumValue = 1;
     self.beerCountSlider.maximumValue = 10;
     
+    //Number of beers shown in label
+    [self.beerCountLabel setText:[NSString stringWithFormat:@"%i", (int) self.beerCountSlider.value]];
+    
     // Tells `self.calculateButton` that when a finger is lifted from the button while still inside its bounds, to call `[self -buttonPressed:]`
     [self.calculateButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
@@ -69,96 +76,46 @@
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-        
-        if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
-            CGFloat viewWidth = 768;
-            CGFloat padding = 50;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 100;
-            
-            self.beerPercentTextField.frame = CGRectMake(padding, padding+10, itemWidth, itemHeight);
-            
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-            
-            
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.resultsLabel.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight * 4);
-            
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultsLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
-        }
-        
-        else{
-            CGFloat viewWidth = 1024;
-            CGFloat padding = 50;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 100;
-            
-            self.beerPercentTextField.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-            
-            
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.resultsLabel.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultsLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
-            
-            
-        }
-
-        
-        
-       
+    CGRect screen = [[UIScreen mainScreen] bounds];
+    CGFloat viewWidth = screen.size.width;
+    if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
+        viewWidth = screen.size.width;
     }
-    
     else{
-        if (self.interfaceOrientation == UIInterfaceOrientationPortrait) {
-                CGFloat viewWidth = 320;
-                CGFloat padding = 20;
-                CGFloat itemWidth = viewWidth - padding - padding;
-                CGFloat itemHeight = 44;
-    
-                self.beerPercentTextField.frame = CGRectMake(padding, padding+10, itemWidth, itemHeight);
-    
-                CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-                self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-    
-    
-                CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-                self.resultsLabel.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight * 4);
-    
-                CGFloat bottomOfLabel = CGRectGetMaxY(self.resultsLabel.frame);
-                self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
-        }
-        
-        else{
-            CGFloat viewWidth = 480;
-            CGFloat padding = 20;
-            CGFloat itemWidth = viewWidth - padding - padding;
-            CGFloat itemHeight = 44;
-            
-            self.beerPercentTextField.frame = CGRectMake(padding, padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
-            self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
-            
-            
-            CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
-            self.resultsLabel.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight);
-            
-            CGFloat bottomOfLabel = CGRectGetMaxY(self.resultsLabel.frame);
-            self.calculateButton.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight);
-            
-            
-        }
-        
+        viewWidth = screen.size.height;
     }
-        
+    
+    
+    CGFloat padding;
+    CGFloat itemWidth;
+    CGFloat itemHeight;
+    
+    if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+         padding = 50;
+
+         itemHeight = 100;
+    }
+    else{
+         padding = 20;
+         itemHeight = 44;
+    }
+    
+    itemWidth = viewWidth - padding - padding;
+    
+    self.beerPercentTextField.frame = CGRectMake(padding, padding+60, itemWidth, itemHeight);
+    
+    CGFloat bottomOfTextField = CGRectGetMaxY(self.beerPercentTextField.frame);
+    self.beerCountSlider.frame = CGRectMake(padding, bottomOfTextField + padding, itemWidth, itemHeight);
+    
+    CGFloat bottomOfSlider = CGRectGetMaxY(self.beerCountSlider.frame);
+    self.resultsLabel.frame = CGRectMake(padding, bottomOfSlider + padding, itemWidth, itemHeight);
+    
+    CGFloat bottomOfLabel = CGRectGetMaxY(self.resultsLabel.frame);
+     self.beerCountLabel.frame = CGRectMake(padding, bottomOfLabel + padding, itemWidth, itemHeight+40);
+    
+    CGFloat bottomOfNumberOfBeers = CGRectGetMaxY(self.beerCountLabel.frame);
+    self.calculateButton.frame = CGRectMake(padding, bottomOfNumberOfBeers + padding, itemWidth, itemHeight);
+    
     
 }
 
@@ -182,7 +139,15 @@
 }
 - (void)SliderValueDidChange:(UISlider *)sender {
     NSLog(@"Slider value changed to %f", sender.value);
+    int sliderValue;
+    sliderValue = lroundf(sender.value);
+    [sender setValue:sliderValue animated:YES];
+
     [self.beerPercentTextField resignFirstResponder];
+    [self.beerCountLabel setText:[NSString stringWithFormat:@"%i", (int) sender.value]];
+    
+    self.title = [NSString stringWithFormat:@"%@ (%i)", NSLocalizedString(@"wine", @"glasses of wine"), (int)self.beerCountSlider.value];
+    
 }
 - (void)buttonPressed:(UIButton *)sender {
     
@@ -243,10 +208,13 @@
     // Allocate and initialize the all-encompassing view
     self.view = [[UIView alloc] init];
     
+    
     // Allocation and initialize each of our views and the gesture recognizer
     UITextField *textField = [[UITextField alloc] init];
     UISlider *slider = [[UISlider alloc] init];
     UILabel *label = [[UILabel alloc] init];
+    UILabel *label2 = [[UILabel alloc] init];
+    
     UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
     
@@ -254,6 +222,7 @@
     [self.view addSubview:textField];
     [self.view addSubview:slider];
     [self.view addSubview:label];
+    [self.view addSubview:label2];
     [self.view addSubview:button];
     [self.view addGestureRecognizer:tap];
     
@@ -261,7 +230,9 @@
     self.beerPercentTextField = textField;
     self.beerCountSlider = slider;
     self.resultsLabel = label;
+    self.beerCountLabel = label2;
     self.calculateButton = button;
+    
     self.hideKeyboardTapGestureRecognizer = tap;
 }
 

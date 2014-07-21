@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		009F84F61978B3D9007F1FC7 /* RWMainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 009F84F51978B3D9007F1FC7 /* RWMainMenuViewController.m */; };
 		00A822FF1972E523003D5946 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A822FE1972E523003D5946 /* Foundation.framework */; };
 		00A823011972E523003D5946 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A823001972E523003D5946 /* CoreGraphics.framework */; };
 		00A823031972E523003D5946 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A823021972E523003D5946 /* UIKit.framework */; };
@@ -34,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		009F84F41978B3D9007F1FC7 /* RWMainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWMainMenuViewController.h; path = ../RWMainMenuViewController.h; sourceTree = "<group>"; };
+		009F84F51978B3D9007F1FC7 /* RWMainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWMainMenuViewController.m; path = ../RWMainMenuViewController.m; sourceTree = "<group>"; };
 		00A822FB1972E523003D5946 /* Calcohol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calcohol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A822FE1972E523003D5946 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		00A823001972E523003D5946 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +120,8 @@
 				00A8230E1972E523003D5946 /* RWAppDelegate.m */,
 				00A823131972E523003D5946 /* RWViewController.h */,
 				00A823141972E523003D5946 /* RWViewController.m */,
+				009F84F41978B3D9007F1FC7 /* RWMainMenuViewController.h */,
+				009F84F51978B3D9007F1FC7 /* RWMainMenuViewController.m */,
 				00A8233319775500003D5946 /* RWWhiskeyViewController.h */,
 				00A8233419775500003D5946 /* RWWhiskeyViewController.m */,
 				00A823161972E523003D5946 /* Images.xcassets */,
@@ -253,6 +258,7 @@
 			files = (
 				00A8233519775500003D5946 /* RWWhiskeyViewController.m in Sources */,
 				00A8230B1972E523003D5946 /* main.m in Sources */,
+				009F84F61978B3D9007F1FC7 /* RWMainMenuViewController.m in Sources */,
 				00A823151972E523003D5946 /* RWViewController.m in Sources */,
 				00A8230F1972E523003D5946 /* RWAppDelegate.m in Sources */,
 			);
@@ -455,6 +461,7 @@
 				00A8232F1972E523003D5946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00A823301972E523003D5946 /* Build configuration list for PBXNativeTarget "CalcoholTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +470,7 @@
 				00A823321972E523003D5946 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
