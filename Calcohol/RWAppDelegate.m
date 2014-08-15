@@ -8,7 +8,7 @@
 
 #import "RWAppDelegate.h"
 #import "RWViewController.h"
-#import "RWMainMenuViewController.h"
+#import "RWWhiskeyViewController.h"
 
 @implementation RWAppDelegate
 
@@ -17,13 +17,22 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] ;
     // Override point for customization after application launch.
     
-    RWMainMenuViewController *mainMenuViewController = [[RWMainMenuViewController alloc] init];
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:mainMenuViewController];
-    self.window.rootViewController = navigationController;
+    RWViewController *wineVC = [[RWViewController alloc] init];
+    RWWhiskeyViewController *whiskeyVC = [[RWWhiskeyViewController alloc] init];
+    UITabBarController *tabBarVC = [[UITabBarController alloc] init];
+    tabBarVC.viewControllers = @[wineVC, whiskeyVC];
+    tabBarVC.delegate = self;
+    
+    self.window.rootViewController = tabBarVC;
     [self.window makeKeyAndVisible];
     return YES;
 }
-							
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    
+    NSLog(@"New view controller selected: %@", viewController.title);
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

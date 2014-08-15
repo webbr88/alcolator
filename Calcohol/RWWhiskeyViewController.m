@@ -16,12 +16,22 @@
 
 
 
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        self.title = NSLocalizedString(@"Whiskey", nil);
+        // Since we don't have icons, let's move the title to the middle of the tab bar
+        [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+    }
+    return self;
+}
+
+
 
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    // Sets navigation title
-    self.title = [NSString stringWithFormat:@"%@ (%i)", NSLocalizedString(@"Whiskey", @"glasses of whiskey"),  (int) self.beerCountSlider.value];
+  self.view.backgroundColor = [UIColor colorWithRed:0.992 green:0.992 blue:0.588 alpha:1]; /*#fdfd96*/
 }
 
 

@@ -27,8 +27,6 @@
 
 - (void)viewDidLoad
 {
-    // Sets navigation title
-    self.title = [NSString stringWithFormat:@"%@ (%i)", NSLocalizedString(@"Wine", @"glasses of wine"), (int)self.beerCountSlider.value];
     
     // Calls the superclass's implementation
     [super viewDidLoad];
@@ -36,7 +34,7 @@
     
     // Set our primary view's background color to lightGrayColor
     self.view.backgroundColor = [UIColor lightGrayColor];
-
+     self.view.backgroundColor = [UIColor colorWithRed:0.741 green:0.925 blue:0.714 alpha:1]; /*#bdecb6*/
     
     // Tells the text field that `self`, this instance of `BLCViewController` should be treated as the text field's delegate
     self.beerPercentTextField.delegate = self;
@@ -147,6 +145,7 @@
     [self.beerCountLabel setText:[NSString stringWithFormat:@"%i", (int) sender.value]];
     
     self.title = [NSString stringWithFormat:@"%@ (%i)", NSLocalizedString(@"wine", @"glasses of wine"), (int)self.beerCountSlider.value];
+    [self.tabBarItem setBadgeValue:[NSString stringWithFormat:@"%d", (int) sender.value]];
     
 }
 - (void)buttonPressed:(UIButton *)sender {
@@ -235,6 +234,20 @@
     
     self.hideKeyboardTapGestureRecognizer = tap;
 }
+
+- (instancetype) init {
+    self = [super init];
+    
+    if (self) {
+        self.title = NSLocalizedString(@"Wine", @"wine");
+        
+        // Since we don't have icons, let's move the title to the middle of the tab bar
+        [self.tabBarItem setTitlePositionAdjustment:UIOffsetMake(0, -18)];
+    }
+    
+    return self;
+}
+
 
 
 @end
